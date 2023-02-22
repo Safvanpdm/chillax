@@ -1,0 +1,48 @@
+{% extends 'common/base.html' %}
+{% load static%}
+
+{% block css%}
+{{ block.super}}
+
+{% endblock css %}
+
+
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 mx-auto">
+        <img
+          class="card-img-top border-2"
+          src="{{ product_detailes.image.url }}"
+          alt="Card image cap"
+          height="400px"
+        />
+      </div>
+      <div class="col-lg-6 col-sm-12 mx-auto my-auto">
+        <form method="POST">
+          {% csrf_token %}
+  
+          <h3 class="card-title">{{ product_detailes.product_name }}</h3>
+          <p class="card-text text-warning fw-bold">
+            Rs . {{ product_detailes.price }}
+          </p>
+  
+          <p class="card-text text-dark">
+            Description : {{ product_detailes.description }}
+          </p>
+          <p class="card-text text-danger">Stock :{{ product_detailes.stock }}</p>
+        
+  
+          <button class="btn btn-dark mt-3" type="submit">Add to Cart</button>
+          <!-- <h6 class="text-danger text-center bg-white">{{ message }}</h6> --><br>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+  

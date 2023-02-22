@@ -16,21 +16,22 @@
 
             </div>
             <div class="col-lg-7 col-12">
-                <form>
+                <form method="POST" enctype="multipart/form-data">
+                  
+                  {% csrf_token %}
+
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label fw-bold">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">I'm not a Robot</label>
-                    </div>
-                    <button type="submit" class="btn btn-dark">Submit</button><br>
+                    
+                    <button type="submit" class="btn btn-dark">Login</button><br>
+                    <h6 class="text-danger text-center bg-white">{{error_msg}}</h6>
+
                   </form><br>
                   <p>Don't have an account?<a href="{% url 'common:signup'%}" style="color: blue;" class="btn fw-bold">Create an account</a></p>
 
@@ -38,6 +39,7 @@
         </div>
     </div>
 </section>
+
 
 
 

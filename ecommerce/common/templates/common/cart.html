@@ -1,0 +1,76 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block header %}
+
+{% endblock%} 
+{{block.super}}
+
+
+{% block content%}
+
+
+<body >
+
+  <table class="table bg-light">
+    <thead>
+      <tr>
+        <th scope="col">sl.no.</th>
+        <th scope="col">Product image</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">TotalPrice</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      
+   {% for product in cart_items %}
+
+   <tr>
+
+      <td>{{ forloop.counter }}</td>
+      <td><img src="{{ product.product.image.url }}"  height="100px" alt=""></td>
+      <td>{{ product.product.product_name }}</td>
+      <td class="price">₹ {{ product.product.price }}</td>
+      <td><input type="number" min="1" value="1" max="{{ product.product.stock }}"   item-price ="{{ product.product.price }}" item-id ="{{ product.product.id }}"   >{{ product.product.quantity }}</td>
+     
+      
+</tr>
+
+  {% endfor %}
+
+  
+</tbody>
+</table>
+<div style="margin-left: 500px;">
+
+<table class="table bg-warning">
+
+
+  <tr>
+    <th>Grand Total </th>
+    <td><span id="grand_total" style="font-weight: bolder;"></span></td>
+  </tr>
+
+</table>
+</div>
+
+
+    
+
+</body>
+</html>
+
+
+
+     
+
+
+
+
+
+
+
+{% endblock%} 

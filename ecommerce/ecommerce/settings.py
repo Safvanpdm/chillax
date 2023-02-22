@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'common',
+    'ecommerceadmin',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kokoblack',
+        'USER':'postgres',
+        'PASSWORD':'root',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
 
@@ -118,7 +123,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'common/static')]
+
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+MEDIA_URL = '/media/'
+
+
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'common/static',),
+                os.path.join(BASE_DIR,'ecommerceadmin/static',)
+                ]
 
 
 # Default primary key field type

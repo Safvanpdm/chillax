@@ -28,6 +28,7 @@ body{
 }
 #navbarNav a{
     border-bottom:2px solid transparent ;
+    color: black;
     
 }
 #navbarNav a:hover{
