@@ -1,15 +1,26 @@
 from django.shortcuts import render,redirect
 from .models import Admin,Products
-from common.models import Customer
+from common.models import Customer , Review ,Order_detail
+from .decorators import login_required
+from django.http import JsonResponse
+
 
 # Create your views here.
-
+@login_required
 def index(request):
 
     admin = Admin.objects.filter(id= request.session['admin']).values('admin_name')
     admin_name = admin[0]['admin_name']
 
-    return render(request,'ecommerceadmin/index.html',{'name':admin_name})
+    product_count =Products.objects.all().count()
+    order_count =Order_detail.objects.all().count()
+
+
+    orders=Order_detail.objects.all()[0:6]
+
+
+
+    return render(request,'ecommerceadmin/index.html',{'name':admin_name,'orders':orders,'p_count':product_count,'o_count':order_count})
 def login(request):
 
     error_msg = ''
@@ -29,6 +40,9 @@ def login(request):
             error_msg = 'email or password is incorrect'
 
     return render(request,'ecommerceadmin/login.html',{'error':error_msg})
+
+
+@login_required
 
 def add_product(request):
 
@@ -59,8 +73,30 @@ def add_product(request):
 
     return render(request,'ecommerceadmin/add_product.html',{'success':success_msg,'error':error_msg})
 
+
+
 def update_stock(request):
-    return render(request,('ecommerceadmin/update_stock.html'))
+
+    pno=Products.objects.all()
+
+    if request.method=='POST':
+        pid = request.POST['pno']
+        n_stock = int(request.POST['n_stock'])
+        newstock = Products.objects.get(id=pid)
+        newstock.stock = n_stock
+        newstock.save()
+
+
+    return render(request,'ecommerceadmin/update_stock.html',{'pno':pno})
+
+def reviews(request):
+
+    reviews = Review.objects.all()
+
+    return render(request,'ecommerceadmin/reviews.html',{'reviews':reviews})
+
+
+@login_required
 
 def catalogue(request):
 
@@ -69,7 +105,13 @@ def catalogue(request):
     return render(request,'ecommerceadmin/catalogue.html',{'products':products})
 
 def order_history(request):
-    return render(request,('ecommerceadmin/order_history.html'))
+
+    order_history=Order_detail.objects.all()
+
+    return render(request,'ecommerceadmin/order_history.html',{'order_history':order_history})
+
+
+@login_required
 
 def change_password(request):
 
@@ -108,6 +150,9 @@ def change_password(request):
             error_msg = 'passwords doesn\'t match'
     return render(request,'ecommerceadmin/change_password.html',{'success':success_msg,'error':error_msg})
 
+
+@login_required
+
 def customers(request):
 
     customer = Customer.objects.all()
@@ -143,3 +188,8 @@ def logout(request):
     del request.session['admin']
     request.session.flush()
     return redirect('ecommerceadmin:login')
+
+def get_product(request):
+    pid = request.POST['pid']
+    p_no=Products.objects.get(id=pid)
+    return JsonResponse({'data':p_no.stock})

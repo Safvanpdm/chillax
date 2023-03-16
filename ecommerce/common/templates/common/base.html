@@ -15,6 +15,10 @@
   <!-- icon link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<!-- razorpay  -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <!-- css link -->
   {% block css %}
   <link rel="stylesheet" href="{% static '/css/base.css' %}">
@@ -46,17 +50,25 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'common:contact' %}" style="color: black;">Contact Us</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'common:profile' %}" style="color: black;">Profile</a>
+          </li>
+         
         </ul>
         <div class="ms-3">
           <a href="{% url 'common:cart' %}"  type=" button " class="btn"><i class="bi bi-cart-fill"></i></a>
-          <a href="{% url 'common:login' %}" type="button" class="btn"><i class="bi bi-person-fill"></i></a>
-          <a href="{% url 'common:change_password' %}" type="button" class="btn"><i class="bi bi-gear-fill"></i></a>
+         
+         <a href="{% url 'common:login' %}" type="button" class="btn"><i class="bi bi-person-fill"></i></a>
+         <a href="{% url 'common:logout' %}" type="button" class="btn text-danger"><i class="bi bi-box-arrow-right"></i></a>
+
+          
+        </div>
         </div>
       </div>
     </div>
   </nav>
 
-  {% block content%}{%endblock content%}
+  {% block content %}{% endblock content %}
 
   <!-- footer part -->
 

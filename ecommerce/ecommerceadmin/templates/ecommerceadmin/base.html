@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>admin</title>
+
+  <!-- bootstrap cdn  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,6 +17,9 @@
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -53,7 +58,7 @@
       
       <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header  ">
-          <a href="{% url 'ecommerceadmin:adminhome' %}"><h5 class="offcanvas-title fw-bold mt-3" id="offcanvasExampleLabel" style="color: brown;"><i class="fas fa-tachometer-alt me-1 "></i>Dashboard</h5></a>
+          <a href="{% url 'ecommerceadmin:adminhome' %}" class="text-decoration-none"><h5 class="offcanvas-title fw-bold mt-3" id="offcanvasExampleLabel" style="color: brown;"><i class="fas fa-tachometer-alt me-1 "></i>Dashboard</h5></a>
         </div>
         <div class="offcanvas-body">
 
@@ -65,7 +70,7 @@
             <a href="{% url 'ecommerceadmin:order_history' %}" class="list-group-item list-group-item-action bg-transparent text-dark  fw-bold">
               <i class="fas fa-folder-plus me-2"></i>Order History
             </a>
-            <a href="" class="list-group-item list-group-item-action bg-transparent text-dark    fw-bold">
+            <a href="{% url 'ecommerceadmin:reviews' %}" class="list-group-item list-group-item-action bg-transparent text-dark    fw-bold">
               <i class="fas fa-paperclip me-2"></i>Reviews
             </a>
             <a href="{% url 'ecommerceadmin:update_stock' %}" class="list-group-item list-group-item-action bg-transparent text-dark    fw-bold">

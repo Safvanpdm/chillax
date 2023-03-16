@@ -9,7 +9,7 @@
 {% block content %}
 
 <section id="product">
-    <div class="container">
+    <div class="container mb-5">
 
 
       <div class="row pt-4 align-items-center gy-4  ">
@@ -23,13 +23,15 @@
 
                      <input type="hidden" name="pid" value="{{product.id}}" id="">
 
-                <div class="card " style="width: 16rem;">
-                 <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap" height="300px">
+                <div class="card " style="width: 14rem;">
+                 <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap" height="270px">
                   <div class="card-body">
                    <h5 class="card-title text-dark text-decoration-none">{{ product.product_name }}</h5>
                    <p class="card-text text-warning">Rs . {{ product.price }}</p>
         
                    <button class="btn btn-dark mt-3">Add to Cart</button>
+          <!-- <h6 class="text-danger text-center bg-white">{{ error }}</h6><br> -->
+
                   </div>
                 </div>
               </a>

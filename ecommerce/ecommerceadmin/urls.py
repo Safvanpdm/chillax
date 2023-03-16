@@ -14,8 +14,14 @@ urlpatterns = [
     path('customers',views.customers,name='customers'),
     path('signup',views.signup,name='signup'),
     path('logout',views.logout,name='logout'),
-
+    path('reviews',views.reviews,name='reviews'),
     path('change_password',views.change_password,name='change_password'),
+
+
+    path('get_product',views.get_product,name='get_product'),
+
+
+
 
 
 
