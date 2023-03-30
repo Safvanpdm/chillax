@@ -14,13 +14,18 @@ def index(request):
 
     product_count =Products.objects.all().count()
     order_count =Order_detail.objects.all().count()
+    customers_count = Customer.objects.all().count()
 
 
-    orders=Order_detail.objects.all()[0:6]
+    # orders=Order_detail.objects.all().order_by('date')
+
+    orders=Order_detail.objects.all().order_by('-date')[0:4]
 
 
 
-    return render(request,'ecommerceadmin/index.html',{'name':admin_name,'orders':orders,'p_count':product_count,'o_count':order_count})
+
+
+    return render(request,'ecommerceadmin/index.html',{'name':admin_name,'orders':orders,'p_count':product_count,'o_count':order_count,'c_count':customers_count})
 def login(request):
 
     error_msg = ''
@@ -193,3 +198,9 @@ def get_product(request):
     pid = request.POST['pid']
     p_no=Products.objects.get(id=pid)
     return JsonResponse({'data':p_no.stock})
+
+def delete_product(request,pid):
+    product =Products.objects.get(id=pid)
+    product.delete()
+    return redirect('ecommerceadmin:catalogue')
+

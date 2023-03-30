@@ -19,6 +19,8 @@ urlpatterns = [
 
 
     path('get_product',views.get_product,name='get_product'),
+    path('product/delete_product/<int:pid>',views.delete_product,name='delete_product'),
+
 
 
 

@@ -33,6 +33,8 @@
                     <p class="card-text text-warning">Rs .{{ product.price }}</p>
                     <p class="card-text text-info00">Description : {{ product.description }}</p>
                     <p class="card-text text-danger">Stock : {{ product.stock }}</p>
+                    <a class="btn btn-danger mt-3" href="{% url 'ecommerceadmin:delete_product' product.id %}" type="button">Delete</a>
+
       
                   </div>  
               </div>

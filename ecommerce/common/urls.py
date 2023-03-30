@@ -6,7 +6,7 @@ app_name='common'
 
 urlpatterns = [
     path('',views.home,name='home'),
-    path('about/',views.about,name='about'),
+    path('about',views.about,name='about'),
     path('contact',views.contact,name='contact'),
     path('shop',views.shop,name='shop'),
     path('login',views.login,name='login'),
@@ -27,6 +27,8 @@ urlpatterns = [
     path("edit_profile", views.edit_profile, name="edit_profile"),
     path("my_orders", views.my_orders, name="my_orders"),
     path("my_orders/cancel_order/<int:o_id>", views.cancel_order, name="cancel_order"),
+    path("search_product", views.search_product, name="search_product"),
+
 
 
 

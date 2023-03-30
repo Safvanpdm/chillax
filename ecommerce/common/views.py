@@ -3,9 +3,11 @@ from .models import Customer , Cart , Order , Order_detail,Review
 from ecommerceadmin.models import Products
 from .decorators import login_required
 from django.http import JsonResponse
-from django.db.models import F,Sum
+from django.db.models import F,Q,Sum
 import razorpay
+from django.core import serializers
 from django.conf import settings
+from . serializer import productSerialize
 
 
 
@@ -463,6 +465,20 @@ def cancel_order(request,o_id):
     ordered_item.status='cancelled'
     ordered_item.save()
     return redirect('common:my_orders')
+
+
+
+def search_product(request):
+
+    search_word =request.POST['searchdata']
+
+    results = Products.objects.filter(Q(product_name__icontains=search_word))
+    print(results)
+    result_list =productSerialize(results,many=True)
+    print(result_list)
+    return JsonResponse({'results':result_list.data})
+
+    
 
 
 
