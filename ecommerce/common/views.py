@@ -22,6 +22,15 @@ def home(request):
 def about(request):
     return render(request,('common/about.html'))
 
+def readytofry(request):
+    return render(request,('common/readytofry.html'))
+
+def readytocook(request):
+    return render(request,('common/readytocook.html'))
+
+def heatandeat(request):
+    return render(request,('common/heatandeat.html'))
+
 def contact(request):
 
     if request.method == "POST":

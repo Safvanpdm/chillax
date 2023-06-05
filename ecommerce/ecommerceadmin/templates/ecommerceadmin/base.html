@@ -29,21 +29,52 @@
 
     
 
-
-      <nav class="navbar navbar-expand-lg bg-light  " id="navbar" >
-        <div class="container-fluid">
-          <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            <i class="bi bi-speedometer"></i>
-          </button>
-          <a class="navbar-brand fw-bold fs-2 text-dark me-auto" href="#" ><span style="color: brown;">KOKO</span> BLACK</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-expanded="false">
-            <span class="navbar-toggler-icon "><i class="bi bi-list"></i></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav fw-bold ms-auto" id="list">
+  <nav class="navbar navbar-expand-lg bg-light " id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-2" href="#"><span class="koko">Chillax</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-expanded="false">
+        <span class="navbar-toggler-icon "><i class="bi bi-list"></i></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav fw-bold mx-auto" id="list">
               <li class="nav-item">
+                  <div class="list-group list-group-flush my-3">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:adminhome' %}" style="color: brown;"><i class="fas fa-tachometer-alt me-1 "></i>Dashboard</h5></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:add_product' %}" style="color: black;">Add Products</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:order_history' %}" style="color: black;">Order History</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:reviews' %}" style="color: black;">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:update_stock' %}"  style="color: black;">Update Stock</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:catalogue' %}" style="color: black;">Catalogue</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:customers' %}" style="color: black;">Customers</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:change_password' %}" style="color: black;">Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'ecommerceadmin:logout' %}" style="color: black;">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="" style="color: black;"></i>{{ name | upper }}</a>
+                    </li>
+                  
+                  <!-- <li class="nav-item">
                 <a class="nav-link active text-dark" aria-current="page" href=""><i class="fas fa-user me-2"></i>{{ name | upper }}</a>
+              </li> -->
+            </div>
               </li>
              
             </ul>
@@ -51,12 +82,12 @@
           </div>
         </div>
       </nav>
-
   <!-- offcanvas -->
       
     
       
-      <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <!-- <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div>
         <div class="offcanvas-header  ">
           <a href="{% url 'ecommerceadmin:adminhome' %}" class="text-decoration-none"><h5 class="offcanvas-title fw-bold mt-3" id="offcanvasExampleLabel" style="color: brown;"><i class="fas fa-tachometer-alt me-1 "></i>Dashboard</h5></a>
         </div>
@@ -94,7 +125,7 @@
           </div>
          
         </div>
-      </div>
+      </div> -->
 
     <!-- content part -->
 

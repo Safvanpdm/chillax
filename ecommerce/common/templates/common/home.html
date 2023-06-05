@@ -12,24 +12,24 @@
 
 {% block content %}
 <section id="home">
-   <div class="row">
+   <!-- <div class="row">
       <div class="col-lg-6 col-sm-12">
-         <h1>TASTE AND TRUST <br>
-         <span>PRESERVED FOREVER!</span>
+         <h1>AVAILABLE AT ALL <br>
+         <span>LEADING SUPERMARKETS!</span>
          </h1>
       </div>
-   </div>
+   </div> -->
    <div class="row">
       <div class="col-lg-6 col-sm-12">
-         <div class="shopnow ">
-            <a href="{% url 'common:shop' %}" class="btn-group-sm"><button type="button" class="btn">Shop now</button></a>
+         <div class="shopnow">
+            <a href="{% url 'common:shop' %}" class="btn btn-outline-primary"><button type="button" class="btn">SHOP NOW</button></a>
          </div>
       </div>
    </div>
 </section>
 
 <!-- carosal section -->
-<div id="carouselExampleIndicators" class="carousel slide m-5" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide m-5" data-bs-ride="carousel" >
    <div class="carousel-indicators">
      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -37,13 +37,13 @@
    </div>
    <div class="carousel-inner">
      <div class="carousel-item active">
-       <img src="{% static 'image/carosal4.jpg' %}" class=" slide d-block w-100" alt="..." height="500px">
+       <img src="{% static 'image/beefsteaks.jpg' %}" class=" slide d-block w-100" alt="..." height="400px" width="300px" style="border-radius: 18px;" >
      </div>
      <div class="carousel-item">
-       <img src="{% static 'image/carosal2.jpg' %}" class=" slide d-block w-100" alt="..."  height="500px">
+       <img src="{% static 'image/burgerpatty.jpg' %}" class=" slide d-block w-100" alt="..."  height="400px"width="300px"  style="border-radius: 18px;">
      </div>
      <div class="carousel-item">
-       <img src="{% static 'image/carosal5.jpg' %}" class=" slide d-block w-100" alt="..." height="500px">
+       <img src="{% static 'image/salmonslice.jpg' %}" class=" slide d-block w-100" alt="..." height="400px"width="300px"  style="border-radius: 18px;">
      </div>
    </div>
    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -71,7 +71,7 @@
                  <input type="hidden" name="pid" value="{{product.id}}" id="">
 
             <div class="card " style="width: 16rem;">
-             <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap" height="300px">
+             <img class="card-img-top" src="{{ product.image.url }}" alt="Card image cap" height="250px" width="250px">
               <div class="card-body">
                <h5 class="card-title text-dark text-decoration-none">{{ product.product_name }}</h5>
                <p class="card-text text-warning">Rs . {{ product.price }}</p>

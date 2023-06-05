@@ -50,7 +50,7 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-light " id="navbar">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold fs-2" href="#"><span class="koko">KOKO</span><span style="color: black;">BLACK</span> </a>
+      <a class="navbar-brand fw-bold fs-2" href="#"><span class="CHILL">CHILLAX</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-expanded="false">
         <span class="navbar-toggler-icon "><i class="bi bi-list"></i></span>
@@ -63,9 +63,15 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'common:about' %}" style="color: black;">About Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'common:shop' %}" style="color: black;">Products</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'common:shop' %}" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;">Products</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'common:readytocook' %}">READY TO COOK</a>
+              <a class="dropdown-item" href="{% url 'common:heatandeat' %}">HEAT AND EAT</a>
+              <a class="dropdown-item" href="{% url 'common:readytofry' %}">READY TO FRY</a>
+            </div>
           </li>
+      
           <li class="nav-item">
             <a class="nav-link" href="{% url 'common:contact' %}" style="color: black;">Contact Us</a>
           </li>
@@ -109,16 +115,15 @@
     <div class="container text-center text-md-start">
       <div class="row ">
         <div class="col-lg-3 col-md-3 col-sm-6">
-          <h5><span class="koko">KOKO</span>BLACK</h5>
-          <p>We replenish the Dates coming straight from the farm of the ancient city of al ula is Saudi Arabia along
-            with global assortment of exotic nuts</p>
+          <h5><span class="koko">Chillax</span></h5>
+          <p>Chillax is a delicious new brand from the house of Frozen foods that’s committed to enhance your taste buds to the next level of yumminess with its wide range of ready to fry, ready to steam and ready to cook frozen food products.</p>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
           <h5>PRODUCTS</h5>
-          <p><a href=""></a>Dates</p>
-          <p><a href=""></a>Dry Fruit</p>
-          <p><a href=""></a>Chocolates</p>
-          <p><a href=""></a>Nuts</p>
+          <p><a href=""></a>Ready To Cook</p>
+          <p><a href=""></a>Ready To Fry</p>
+          <p><a href=""></a>Heat And Eat</p>
+          <p><a href=""></a>Poultry</p>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
           <h5>LINKS</h5>
@@ -131,8 +136,8 @@
         <div class="col-lg-3 col-md-3 col-sm-6">
           <h5>CONTACT</h5>
           <p><i class="bi bi-house-fill"></i> Calicut,kerala</p>
-          <p><i class="bi bi-envelope-fill"></i>kokoblack@gmail.com</p>
-          <p><i class="bi bi-phone-fill"></i>+91 9645312745</p>
+          <p><i class="bi bi-envelope-fill"></i>chillax@gmail.com</p>
+          <p><i class="bi bi-phone-fill"></i>+91 9600050000</p>
           <p><i class="bi bi-printer-fill"></i>+33 2123215</p>
 
         </div>
@@ -141,7 +146,7 @@
       <hr class="mb-4">
       <div class="row">
         <div class="col-lg-7 col-sm-12">
-          <p>copyright 2020 reserved by:<strong>kokoblack </strong></p>
+          <p>copyright 2020 reserved by:<strong>chillax </strong></p>
         </div>
         <div class="col-lg-4 col-sm-12">
           <ul class="list-unstyled list-inline">
@@ -228,3 +233,20 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+    <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="{% url 'common:readytocook' %}">READY TO COOK</a>
+              <a class="dropdown-item" href="{% url 'common:heatandeat' %}">HEAT AND EAT</a>
+              <a class="dropdown-item" href="{% url 'common:readytofry' %}">READY TO FRY</a>
+            </div>
+          </li> -->

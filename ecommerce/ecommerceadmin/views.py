@@ -7,6 +7,7 @@ from django.http import JsonResponse
 
 # Create your views here.
 @login_required
+
 def index(request):
 
     admin = Admin.objects.filter(id= request.session['admin']).values('admin_name')
@@ -22,10 +23,8 @@ def index(request):
     orders=Order_detail.objects.all().order_by('-date')[0:4]
 
 
-
-
-
     return render(request,'ecommerceadmin/index.html',{'name':admin_name,'orders':orders,'p_count':product_count,'o_count':order_count,'c_count':customers_count})
+
 def login(request):
 
     error_msg = ''
